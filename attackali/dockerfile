@@ -1,0 +1,33 @@
+# Senaste Kali
+FROM kalilinux/kali-rolling
+
+# Uppdatera OS
+RUN apt update --fix-missing
+RUN apt upgrade -y
+
+# Zsh
+RUN apt install -y zsh zsh-autosuggestions zsh-syntax-highlighting bash-completion
+
+# Tools
+RUN apt install -y curl git wget gobuster sqlmap
+
+# Wordlist för web fuzzing
+RUN mkdir /usr/share/wordlists/
+RUN wget -P /usr/share/wordlists/ https://github.com/danielmiessler/SecLists/raw/refs/heads/master/Discovery/Web-Content/common.txt
+
+# Skapa och placera sig i en tom katalog för arbete
+WORKDIR /work
+
+# Ställ in ENV
+ENV LC_ALL=C.UTF-8
+ENV RUNNING_IN_DOCKER=true
+
+# ställ in shell zsh
+# CMD zsh
+
+# -
+# Bygg image 
+# docker build -t attackali -f dockerfile .
+# -
+# Skapa container
+# docker run -it --name attackali attackali /bin/zsh
