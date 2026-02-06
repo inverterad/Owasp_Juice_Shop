@@ -25,10 +25,11 @@ I also want to set up a docker container for pentesting, enumeration and general
 
 Some tools I will need or want a GUI for, so those I will probably perform on the host machine, such as Burp Suite.
 
-[Link to dockerfile](dockerfile)
+[Link to dockerfile](attackali/dockerfile)
 
-Main: kalilinux/kali-rolling
-Tools: gobuster, sqlmap
+- Main: kalilinux/kali-rolling
+- Shell: zsh
+- Tools: curl, gobuster, sqlmap
 
 To start the docker kali container
 
