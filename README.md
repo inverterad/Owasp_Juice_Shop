@@ -8,6 +8,7 @@ Index
 - [Kali container](#the-kali-container)
 - [Initial enumeration](#initial-enumeration)
 - [First exploit](#dom-based-xss-injection---my-first-exploit)
+- [SQL Injection](#sql-injection---bypass-login)
 
 
 ## The Juice Shop container
@@ -70,7 +71,7 @@ I decided to start easy and try out the DOM-based XSS injection, this was simply
     
     <iframe src="javascript:alert(`xss`)">
 
-into the search bar.
+into the search bar. It was a success.
 
 ![XSS Injection](<images/2026-02-06 - XSS injection 01.png>)
 
@@ -78,3 +79,24 @@ A short summary of DOM-based XSS injections
 
 With user input it is possible to inject harmful code into the webpage and make the webpage to execute it as code.
 This type of attack makes it possible to steal session tokens, user data etc from a legitimate user. With said tokens the attacker can hijack a session and basically become the user without ever needing their password. A harmful DOM-based XSS injection attack is most likely done through phishing where they inbed the injection into a hyperlink that is then sent to the victim. 
+
+
+## SQL Injection - Bypass login
+
+Let's try and get into the admin account, first I needed to find out the e-mail so I clicked around and found a review.
+
+![admin review](<images/2026-02-06 - adminreview.png>)
+
+Now armed with the e-mail I try commenting away the password with a couple of simple extra characters.
+
+    admin@juice-sh.op'-- 
+
+![admin login](<images/2026-02-06 - adminlogin.png>)
+
+And it was a success.
+
+![admin logged in](<images/2026-02-06 - adminloggedin.png>)
+
+A short summary of SQL injections
+
+Using SQL Injection a threat actor breaks out of the intended user input context to inject SQL code into a database query. The injected code can modify the query in a way to alter what information is being collected and shown. Or it could bypass steps in the query to make a login query skip the password requirement altogether.
