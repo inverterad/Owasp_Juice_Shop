@@ -11,7 +11,7 @@ RUN apt install -y zsh zsh-autosuggestions zsh-syntax-highlighting bash-completi
 # Tools
 RUN apt install -y curl ffuf git gobuster nano nuclei sqlmap wget
 
-# Wordlist för web fuzzing
+# Wordlists för web fuzzing
 RUN mkdir /usr/share/wordlists/
 RUN wget -P /usr/share/wordlists/ https://github.com/danielmiessler/SecLists/raw/refs/heads/master/Discovery/Web-Content/common.txt
 RUN wget -P /usr/share/wordlists/ https://github.com/danielmiessler/SecLists/raw/refs/heads/master/Discovery/Web-Content/big.txt
@@ -23,12 +23,17 @@ WORKDIR /work
 ENV LC_ALL=C.UTF-8
 ENV RUNNING_IN_DOCKER=true
 
-# ställ in shell zsh
-# CMD zsh
-
-# -
+# 
 # Bygg image 
 # docker build -t attackali -f dockerfile .
-# -
+# 
 # Skapa container
 # docker run -it --name attackali attackali /bin/zsh
+#
+# Inuti Docker compose
+# 
+# Bygg image
+# docker compose --build
+#
+# Kör igång Kali
+# docker compose exec kali /bin/zsh
