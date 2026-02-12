@@ -1,0 +1,29 @@
+services:
+  owasp-juiceshop:
+    container_name: my_composed_juiceshop
+    image: bkimminich/juice-shop
+    restart: no
+    environment:
+      NODE_ENV: unsafe
+    ports:
+      - "3000:3000"
+    networks:
+      - lilla-labbet
+
+  kali:
+    container_name: composed_attackali
+    build:
+      dockerfile: dockerfile
+      context: ./attackali
+    restart: no
+    tty: true
+    stdin_open: true
+    command: /bin/zsh
+    ports:
+     - "9001:9001"
+    networks:
+      - lilla-labbet
+
+networks:
+  lilla-labbet:
+    driver: bridge

@@ -9,11 +9,12 @@ RUN apt upgrade -y
 RUN apt install -y zsh zsh-autosuggestions zsh-syntax-highlighting bash-completion
 
 # Tools
-RUN apt install -y curl git wget gobuster sqlmap
+RUN apt install -y curl ffuf git gobuster nano nuclei sqlmap wget
 
 # Wordlist för web fuzzing
 RUN mkdir /usr/share/wordlists/
 RUN wget -P /usr/share/wordlists/ https://github.com/danielmiessler/SecLists/raw/refs/heads/master/Discovery/Web-Content/common.txt
+RUN wget -P /usr/share/wordlists/ https://github.com/danielmiessler/SecLists/raw/refs/heads/master/Discovery/Web-Content/big.txt
 
 # Skapa och placera sig i en tom katalog för arbete
 WORKDIR /work
