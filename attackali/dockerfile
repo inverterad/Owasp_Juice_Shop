@@ -9,10 +9,10 @@ RUN apt upgrade -y
 RUN apt install -y zsh zsh-autosuggestions zsh-syntax-highlighting bash-completion
 
 # Tools
-RUN apt install -y curl ffuf git gobuster nano nuclei sqlmap wget
+RUN apt install -y curl git gobuster hashcat nano nuclei python3 sqlmap wget wordlists
 
 # Wordlists för web fuzzing
-RUN mkdir /usr/share/wordlists/
+RUN gunzip /usr/share/wordlists/rockyou.txt.gz
 RUN wget -P /usr/share/wordlists/ https://github.com/danielmiessler/SecLists/raw/refs/heads/master/Discovery/Web-Content/common.txt
 RUN wget -P /usr/share/wordlists/ https://github.com/danielmiessler/SecLists/raw/refs/heads/master/Discovery/Web-Content/big.txt
 

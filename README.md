@@ -13,13 +13,15 @@ And as I want and combine it with a [custom kali docker container](attackali/doc
 ### Overview of Kali machines tools
 
 - **curl** - get/send data over the network
-- **ffuf** - webfuzzing primarily
 - **git** - you never know if they use git
 - **gobuster** - webfuzzing primarily
-- **nano** - useful for making specific payloads
+- **hashcat** - cracking hashes
+- **nano** - useful for making specific payloads and lists
 - **nuclei** - dast, for an initial scan
+- **python3** - sometimes useful to set up a http server
 - **sqlmap** - enumeration and exfiltration of sql database
 - **wget** - download necessary things
+- **wordlists** - I want rockyou.txt
 
 
 ## Index
