@@ -10,7 +10,19 @@ I want an environment where I can restart the OWASP Juice Shop whenever I want a
 I decided to craft a [docker-compose.yaml](docker-compose.yaml)-file to set up my juice shop.<br> 
 And as I want and combine it with a [custom kali docker container](attackali/dockerfile) that will serve as my pentester, at least when it comes to CLI work.
 
-### Overview of Kali machines tools
+## Running everything
+
+Clone this repo, once in the cloned folder run the following commands.
+
+    docker compose up -d --build
+
+Starts everything, you should find your Juice Shop at http://localhost:3000
+
+    docker compose exec kali /bin/zsh
+
+This gets you into the Kali containers CLI
+
+## Overview of Kali machines tools
 
 - **curl** - get/send data over the network
 - **git** - you never know if they use git
