@@ -41,3 +41,4 @@ This gets you into the Kali containers CLI
 - [Initial enumeration](data/001.md)
 - [DOM-based XSS](data/002.md)
 - [SQLinjection login bypass](data/003.md)
+- [Weak Credentials](data/004.md)
