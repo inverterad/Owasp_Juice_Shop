@@ -36,9 +36,11 @@ This gets you into the Kali containers CLI
 - **wordlists** - I want rockyou.txt
 
 
-## Index
+## Index of vulnerabilities found
 
 - [Initial enumeration](data/001.md)
 - [DOM-based XSS](data/002.md)
 - [SQLinjection login bypass](data/003.md)
 - [Weak Credentials](data/004.md)
+- [SQL-injection with data exfiltration](data/005.md)
+
