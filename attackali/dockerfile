@@ -9,7 +9,7 @@ RUN apt upgrade -y
 RUN apt install -y zsh zsh-autosuggestions zsh-syntax-highlighting bash-completion
 
 # Tools
-RUN apt install -y curl git gobuster hashcat nano nuclei python3 sqlmap wget wordlists
+RUN apt install -y curl dnsutils git gobuster hashcat nano nuclei python3 sqlmap wget wordlists
 
 # Wordlists för web fuzzing
 RUN gunzip /usr/share/wordlists/rockyou.txt.gz
