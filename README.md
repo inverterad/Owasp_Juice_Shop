@@ -43,4 +43,4 @@ This gets you into the Kali containers CLI
 - [SQLinjection login bypass](data/003.md)
 - [Weak Credentials](data/004.md)
 - [SQL-injection with data exfiltration](data/005.md)
-
+- [Broken Access Control - IDOR](data/006.md)
